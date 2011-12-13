@@ -170,7 +170,7 @@ describe NutshellCrm::Client do
   before :all do
     @api_username = ENV['NUTSHELL_USERNAME']
     @api_key = ENV['NUTSHELL_APIKEY']
-    @nutshell = NutshellCrm::Client.new @api_username, @api_key #'7c419cd4bc3162a02c89d9e90f96faa066f2d7f6')
+    @nutshell = NutshellCrm::Client.new @api_username, @api_key
     @categories = ['Contacts', 'Accounts', 'Leads']
   end
 
