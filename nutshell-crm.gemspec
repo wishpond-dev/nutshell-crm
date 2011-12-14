@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Michael Shafrir"]
   s.email       = ["mshafrir@gmail.com"]
   s.homepage    = "https://github.com/mshafrir/nutshell-crm"
-  s.summary     = "Summary"
+  s.summary     = "A Ruby wrapper for Nutshell CRM's API"
   s.description = "Description"
 
   s.add_development_dependency 'yard'
@@ -16,14 +16,14 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'httparty'
   s.add_development_dependency 'rspec'
 
+  s.add_dependency 'json'
+  s.add_dependency 'httparty'
+
+
   s.rubyforge_project = "nutshell-crm"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-
-  # specify any dependencies here; for example:
-  # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
 end
