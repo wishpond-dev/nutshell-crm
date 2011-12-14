@@ -28,6 +28,14 @@ describe NutshellCrm::Client do
       @nutshell.api_url.should match 'https://'
     end
 
+    it 'should consider global stub_response property settings' do
+      @nutshell.stub_responses = false
+      @nutshell.find_leads({status: 0}).first['stub'].should_not be true
+      @nutshell.stub_responses = true
+      @nutshell.find_leads({status: 0}).first['stub'].should be true
+      @nutshell.stub_responses = nil
+    end
+
     it 'should find open leads' do
       @nutshell.find_leads({status: 0}).should_not be_empty
     end
