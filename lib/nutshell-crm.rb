@@ -14,16 +14,13 @@ module NutshellCrm
       @username = username
       @api_key = api_key
 
-      puts "Username: #{username}"
-      puts "API Key: #{api_key}"
-
       result = exec_request(build_payload({:username => @username}), 'http://api.nutshell.com/v1/json')
       api_host = result['api']
       @api_url = "https://#{api_host}/api/v1/json"
     end
 
     def add_email(email_string)
-      exec_request build_payload({emailString: email_string})
+      exec_request build_payload({:emailString => email_string})
     end
 
     # Gets all of the custom fields available for Leads, Accounts and Contacts, including appropriate meta-information.
@@ -54,97 +51,97 @@ module NutshellCrm
     end
 
     def find_accounts(query, order_by = nil, order_direction = nil, limit = nil, page = nil, stub_responses = nil)
-      params = {query: query, orderBy: order_by, orderDirection: order_direction, limit: limit, page: page, stubResponses: stub_responses}
+      params = {:query => query, :orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page, :stubResponses => stub_responses}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_account_types(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_activities(query, order_by = nil, order_direction = nil, limit = nil, page = nil, stub_responses = nil)
-      params = {query: query, orderBy: order_by, orderDirection: order_direction, limit: limit, page: page, stubResponses: stub_responses}
+      params = {:query => query, :orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page, :stubResponses => stub_responses}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_activity_types(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_competitors(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_contacts(query, order_by = nil, order_direction = nil, limit = nil, page = nil, stub_responses = nil)
-      params = {query: query, orderBy: order_by, orderDirection: order_direction, limit: limit, page: page, stubResponses: stub_responses}
+      params = {:query => query, :orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page, :stubResponses => stub_responses}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_delays(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_industries(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_lead_outcomes(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params, 'findLead_Outcomes'
       exec_request(payload)
     end
 
     def find_leads(query, order_by = nil, order_direction = nil, limit = nil, page = nil, stub_responses = nil)
-      params = {query: query, orderBy: order_by, orderDirection: order_direction, limit: limit, page: page, stubResponses: stub_responses}
+      params = {:query => query, :orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page, :stubResponses => stub_responses}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_markets(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_milestones(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_origins(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_products(order_by = nil, order_direction = nil, limit = nil, page = nil, stub_responses = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page, stubResponses: stub_responses}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page, :stubResponses => stub_responses}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_settings(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_sources(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
@@ -154,25 +151,25 @@ module NutshellCrm
     end
 
     def find_teams(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_territories(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_timeline(query, order_by = nil, order_direction = nil, limit = nil, page = nil, stub_responses = nil)
-      params = {query: query, orderBy: order_by, orderDirection: order_direction, limit: limit, page: page, stubResponses: stub_responses}
+      params = {:query => query, :orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page, :stubResponses => stub_responses}
       payload = build_payload params
       exec_request(payload)
     end
 
     def find_users(order_by = nil, order_direction = nil, limit = nil, page = nil)
-      params = {orderBy: order_by, orderDirection: order_direction, limit: limit, page: page}
+      params = {:orderBy => order_by, :orderDirection => order_direction, :limit => limit, :page => page}
       payload = build_payload params
       exec_request(payload)
     end
@@ -231,23 +228,23 @@ module NutshellCrm
     end
 
     def new_account(account)
-      exec_request build_payload({account: account})
+      exec_request build_payload({:account => account})
     end
 
     def new_activity(activity)
-      exec_request build_payload({activity: activity})
+      exec_request build_payload({:activity => activity})
     end
 
     def new_contact(contact)
-      exec_request build_payload({contact: contact})
+      exec_request build_payload({:contact => contact})
     end
 
     def new_lead(lead)
-      exec_request build_payload({lead: lead})
+      exec_request build_payload({:lead => lead})
     end
 
     def new_tag(tag)
-      exec_request build_payload({tag: tag})
+      exec_request build_payload({:tag => tag})
     end
 
     def search_accounts(query, limit = nil)
