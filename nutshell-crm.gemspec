@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = "Summary"
   s.description = "Description"
 
+  s.add_development_dependency 'yard'
   s.add_development_dependency 'json'
   s.add_development_dependency 'httparty'
   s.add_development_dependency 'rspec'
