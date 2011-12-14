@@ -6,13 +6,14 @@ require 'httparty'
 # @author Michael Shafrir
 module NutshellCrm
   class Client
-    attr_accessor :api_url
+    attr_accessor :api_url, :stub_responses
     include HTTParty
     format :json
 
     def initialize(username, api_key)
       @username = username
       @api_key = api_key
+      @stub_responses = nil
 
       result = exec_request(build_payload({:username => @username}), 'http://api.nutshell.com/v1/json')
       api_host = result['api']
@@ -300,6 +301,8 @@ module NutshellCrm
       else
         method = override_method
       end
+
+      params[:stubResponses] = @stub_responses if not(params.nil?) && params.has_key?(:stubResponses) && not(@stub_responses.nil?)
 
       # Create the payload
       payload = {:method => camelcase(method), :id => generate_request_id}
