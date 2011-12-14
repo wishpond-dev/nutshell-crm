@@ -1,2 +1,5 @@
 require "bundler/gem_tasks"
-# bundle exec rspec spec/nutshell-crm_spec.rb 
+
+task :test do
+  exec "bundle exec rspec spec/nutshell-crm_spec.rb"
+end
