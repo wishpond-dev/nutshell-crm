@@ -6,5 +6,5 @@ task :test do
 end
 
 task :doc do
-  exec 'yardoc && cp -vR doc/ ../nutshell-crm-docs'
+  exec 'yardoc && cp -vR doc/ ../nutshell-crm-docs && cd ../nutshell-crm-docs && git add . && git commit -am "Update documentation." && git push origin gh-pages'
 end
