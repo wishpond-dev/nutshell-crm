@@ -317,7 +317,7 @@ module NutshellCrm
 
     # All Nutshell API requests need a request id.
     def generate_request_id
-      Digest::MD5.hexdigest(Time.now.to_i.to_s).slice(0..8)
+      Digest::MD5.hexdigest(rand.to_s).slice(0..8)
     end
 
     def exec_request(payload, override_url = nil)
