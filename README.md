@@ -1,7 +1,6 @@
-# @markup markdown
-# @author [Michael Shafrir](mailto:mshafrir@gmail.com)
-
 # Nutshell Crm
+
+Author: [mshafrir@gmail.com](mailto:mshafrir@gmail.com)
 
 ## Description ##
 
