@@ -6,6 +6,5 @@ task :test do
 end
 
 task :doc do
-  exec 'yardoc'
-  exec 'cp -r doc/ ../nutshell-crm-doc'
+  exec 'yardoc && cp -vR doc/ ../nutshell-crm-docs'
 end
