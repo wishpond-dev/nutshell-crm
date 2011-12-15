@@ -7,6 +7,8 @@
 
 Nutshell Crm is a Ruby wrapper for the Nutshell Crm API.
 
+[Nutshell API Reference](http://www.nutshell.com/api/)
+
 ## Reference ##
 
 - {NutshellCrm::Client}
