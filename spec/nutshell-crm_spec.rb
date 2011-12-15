@@ -89,5 +89,11 @@ describe NutshellCrm::Client do
     it 'should return the sources' do
       @nutshell.search_sources('Cold')
     end
+
+    it 'should update a process step' do
+      step = @nutshell.get_lead(1001)['processes'][0]['steps'][0]
+      step['status'] = 2
+      @nutshell.edit_step(step['id'], step['rev'], step)
+    end
   end
 end
