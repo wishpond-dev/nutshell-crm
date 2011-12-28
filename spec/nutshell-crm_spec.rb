@@ -13,12 +13,10 @@ describe NutshellCrm::Client do
       lambda { NutshellCrm::Client.new('invalid@example.com', 'APIKEY123456') }.should raise_error
     end
 
-=begin
     it 'should set up a new client instance with a valid username but invalid API key and raise an error' do
       nutshell = NutshellCrm::Client.new(@api_username, 'APIKEY123456')
       lambda { nutshell.find_leads({status: 0}) }.should raise_error
     end
-=end
   end
 
   subject { @nutshell }
@@ -30,14 +28,14 @@ describe NutshellCrm::Client do
 
     it 'should consider global stub_response property settings' do
       @nutshell.stub_responses = false
-      @nutshell.find_leads({status: 0}).first['stub'].should_not be true
+      @nutshell.find_leads({:status => 0}).first['stub'].should_not be true
       @nutshell.stub_responses = true
-      @nutshell.find_leads({status: 0}).first['stub'].should be true
+      @nutshell.find_leads({:status => 0}).first['stub'].should be true
       @nutshell.stub_responses = nil
     end
 
     it 'should find open leads' do
-      @nutshell.find_leads({status: 0}).should_not be_empty
+      @nutshell.find_leads({:status => 0}).should_not be_empty
     end
 
     it 'should describe custom fields' do
@@ -60,8 +58,8 @@ describe NutshellCrm::Client do
 
     it 'should create a new tag and find it' do
       lambda {
-        @nutshell.new_tag({name: 'FOO2', entityType: 'Leads'})
-        @nutshell.new_tag({name: 'FOO2', entityType: 'Leads'})
+        @nutshell.new_tag({:name => 'FOO2', :entityType => 'Leads'})
+        @nutshell.new_tag({:name => 'FOO2', :entityType => 'Leads'})
       }.should raise_error
     end
 
@@ -92,8 +90,13 @@ describe NutshellCrm::Client do
 
     it 'should update a process step' do
       step = @nutshell.get_lead(1001)['processes'][0]['steps'][0]
-      step['status'] = 2
-      @nutshell.edit_step(step['id'], step['rev'], step)
+      current_status = step['status'].to_i
+
+      if current_status < 2
+        @nutshell.edit_step(step['id'], step['rev'], {:status => 2})
+      else
+        lambda { @nutshell.edit_step(step['id'], step['rev'], {:status => 2}) }.should raise_error
+      end
     end
   end
 end
