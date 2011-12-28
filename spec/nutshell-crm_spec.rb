@@ -15,7 +15,7 @@ describe NutshellCrm::Client do
 
     it 'should set up a new client instance with a valid username but invalid API key and raise an error' do
       nutshell = NutshellCrm::Client.new(@api_username, 'APIKEY123456')
-      lambda { nutshell.find_leads({status: 0}) }.should raise_error
+      lambda { nutshell.find_leads({:status => 0}) }.should raise_error
     end
   end
 
