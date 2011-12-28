@@ -1,4 +1,4 @@
-# Nutshell Crm
+# Nutshell CRM [![Build Status](https://secure.travis-ci.org/mshafrir/nutshell-crm.png)](http://travis-ci.org/mshafrir/nutshell-crm)
 
 Author: [mshafrir@gmail.com](mailto:mshafrir@gmail.com)
 
