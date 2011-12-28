@@ -384,7 +384,9 @@ module NutshellCrm
         method = override_method
       end
 
-      params[:stubResponses] = @stub_responses if not(params.nil?) && params.has_key?(:stubResponses) && not(@stub_responses.nil?)
+      if (not params.nil?) && params.has_key?(:stubResponses) && (not @stub_responses.nil?)
+        params[:stubResponses] = @stub_responses
+      end
 
       # Create the payload
       payload = {:method => camelcase(method), :id => generate_request_id}
