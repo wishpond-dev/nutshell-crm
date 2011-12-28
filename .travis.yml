@@ -3,3 +3,5 @@ language: ruby
 rvm:
   - 1.9.2
   - 1.8.7
+
+env: NUTSHELL_USERNAME=mshafrir@gmail.com NUTSHELL_APIKEY=1d58ccb0eeba08916ed379bc3607c6999e343412
