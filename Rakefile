@@ -1,5 +1,7 @@
 require 'bundler/gem_tasks'
+require 'rake'
 require 'rake/task'
+require 'rake/testtask'
 
 task :test do
   exec 'rbenv local 1.9.2-p290 && bundle exec rspec spec/nutshell-crm_spec.rb && rbenv local 1.9.3'
