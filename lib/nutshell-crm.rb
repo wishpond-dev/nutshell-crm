@@ -364,7 +364,12 @@ module NutshellCrm
       exec_request build_payload({:string => query, :limit => limit})
     end
 
-
+    # Delete an Activity 
+    def delete_activity(activity_id, rev)
+        params = {:activityId => activity_id, :rev => rev}
+        payload = build_payload params
+        exec_request(payload)
+    end
 
 
     private
