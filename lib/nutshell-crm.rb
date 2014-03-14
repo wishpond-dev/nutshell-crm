@@ -306,6 +306,11 @@ module NutshellCrm
       exec_request build_payload({:lead => lead})
     end
 
+    # Create a new Lead.
+    def new_note(entity, note)
+      exec_request build_payload({:entity => entity, :note => note})
+    end
+
     # Create a new tag.
     #
     # @param [Hash] tag
