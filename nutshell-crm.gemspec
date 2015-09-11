@@ -13,12 +13,10 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'yard'
-  s.add_development_dependency 'json'
-  s.add_development_dependency 'httparty'
   s.add_development_dependency 'rspec'
 
-  s.add_dependency 'json'
-  s.add_dependency 'httparty'
+  s.add_runtime_dependency 'json'
+  s.add_runtime_dependency 'httparty'
 
 
   s.rubyforge_project = "nutshell-crm"
